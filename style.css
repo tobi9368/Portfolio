@@ -1,0 +1,77 @@
+:root {
+    --main-color: #ffffff;
+    --main-contrast: #4690E0;
+    --main-bg1: #5AFA8D;
+    --main-bg2: #EBE672;
+    --main-bg3: #F06C4F;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+li, a, button {
+    font-weight: 500;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 10%;
+    border-bottom: 1px solid black;
+    position: fixed;
+    width: 100%;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 1rem;
+}
+
+.filler:hover {
+    cursor: default;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+    font-size: 1.35rem;
+    font-size: 0.8rem;
+}
+
+.navlink li a:hover {
+    color: var(--main-color);
+    background-color: var(--main-contrast);
+}
+
+header button {
+    padding: 0.563rem 1.563rem;
+    background-color: var(--main-contrast);
+    border: 2px solid var(--main-contrast);
+    border-radius: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+    background-color: var(--main-color);
+    color: var(--main-contrast);
+}
