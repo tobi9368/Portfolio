@@ -1,3 +1,5 @@
+/* Sætter en masse farve, sådan man kan ændre dem
+en gang og på den måde ændre den på hele siden */
 :root {
     --main-color: #ffffff;
     --main-contrast: #4690E0;
@@ -6,6 +8,10 @@
     --main-bg3: #F06C4F;
 }
 
+/*Sættes på alle elementer på siden
+Er vigtig den er øverst så du kan ændre ting længere nede
+er nemlig kun gyldig hvis der er ikke er noget
+som skriver over den */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,8 +19,8 @@
     background-color: #fff;
 }
 
+/* Generel stiling for navbaren*/
 li, a, button {
-    font-weight: 500;
     font-size: 1rem;
     color: black;
     text-decoration: none;
@@ -23,7 +29,7 @@ li, a, button {
     letter-spacing: 0.1rem;
 }
 
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,25 +37,27 @@ header {
     border-bottom: 1px solid black;
     position: fixed;
     width: 100%;
+    margin-bottom: 50px;
 }
 
-.logo {
-    cursor: pointer;
-}
-
+/* Gør at de ikke er i punktform */
 .nav_links {
     list-style: none;
 }
 
+/* Gør at links bliver skrevet på en enkelt linje*/
 .nav_links li {
     display: inline-block;
     padding: 0px 1rem;
 }
 
+/* Gør at musen ikke bliver ændret når man har
+den over "/" */
 .filler:hover {
     cursor: default;
 }
 
+/* basal stiling for link */
 .nav_links li a {
     transition: all 0.3s ease 0s;
     font-size: 1.35rem;
@@ -57,12 +65,8 @@ header {
     position: relative;
 }
 
-.navlink li a:hover {
-    color: var(--main-color);
-    background-color: var(--main-contrast);
-}
-
-header button {
+/* Basal stiling for kontakt knappen */
+.header button {
     padding: 0.563rem 1.563rem;
     background-color: var(--main-color);
     border: 1px solid black;
@@ -72,27 +76,34 @@ header button {
     position: relative;
 }
 
-header button::before {
+/* Bruger et "pseudo element" for at tegne linjen
+under når man hover over den */
+.link_nav::after {
     content: "";
     position: absolute;
     left: 0;
+    bottom: -3px;
     width: 100%;
-    height: 3px;
-    top: -2px;
+    height: 1px;
     background-color: black;
 
+    /* De næste tre gør man ikke kan se stregen,
+    bestemmer siden linjen kommer fra og sætter
+    hvordan animation kører */
     transform: scaleX(0);
-    transform-origin: left;
-
+    transform-origin: right;
     transition: transform 250ms ease-in;
 }
 
-header button:hover::before {
+/* Gør man kan se linje når man hover over den */
+.link_nav:hover::after {
     transform: scaleX(1);
-    transform-origin: right;
+    transform-origin: left;
 }
 
-header button::after {
+/* Alt det næste fungere på samme måde som over,
+men bruger både "before" og "after" for at skabe to linjer */
+.header button::after {
     content: "";
     position: absolute;
     left: 0;
@@ -103,55 +114,74 @@ header button::after {
 
     transform: scaleX(0);
     transform-origin: right;
-
     transition: transform 250ms ease-in;
 }
 
-header button:hover::after {
+.header button:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.link_nav::after {
+.header button::before {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -3px;
     width: 100%;
-    height: 1px;
+    height: 3px;
+    top: -2px;
     background-color: black;
-
     transform: scaleX(0);
-    transform-origin: right;
-
+    transform-origin: left;
     transition: transform 250ms ease-in;
 }
 
-.link_nav:hover::after {
+.header button:hover::before {
     transform: scaleX(1);
-    transform-origin: left;
+    transform-origin: right;
 }
 
+/* Jeg har ikke brugt samme metode som ved "KONTAKT"
+til "MEDIER", det gøres siden det ikke kun er
+et element som skal vises, men 3 andre skal gemmes
+bag ved, lidt mere kompliceret, men gør mit bedste
+for at forklare */
+
+/* sætter padding og margin til 0 */
 .social {
     padding: 0;
     margin: 0;
 }
 
+/* sørger for at det står på en linje og ikke en liste */
 .social li {
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 
+/* "li + li" gør at hvis der er et "li" element
+som kommer lige efter et "li" element, vil det ikke
+blive vist. "first-child" gør at når du hover
+så viser den ikke det første "li", som i vores tilfælde
+er "MEDIER" */
 .social li + li, 
 .social:hover li:first-child {
     display: none;
 }
 
+/* sørger igen for at de altid står på en linje.
+I kombination med koden over, gør det at man kan se
+"MEDIER" når man ikke hover over, og når man hover
+over den fjerne den "MEDIER" og viser iconer for 
+forskellige sociale medier
+*/
 .social:hover li + li {
     display: inline-block;
 }
 
+/* Det næste er præcis det samme som vi gør ved "KONTAKT"
+så de ligner hinanden, bare at dette ikke er en knap
+men en liste */
 .social {
     padding: 0.563rem 1.563rem;
     background-color: var(--main-color);
@@ -161,7 +191,8 @@ header button:hover::after {
     transition: all 0.3s ease 0s;
     position: relative;
     width: 7.5rem;
-    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .social::before {
@@ -202,4 +233,42 @@ header button:hover::after {
 .social:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+/* Her begynder stiling af kroppen, rimelig basalt
+sørger for den ikke klipper med navbar, sætter baggrunds-
+billede */
+.main {
+    padding: 50px;
+    background-image: url(landskab.jpeg);
+    width: 100%;
+    height: 800px;
+    background-repeat: no-repeat;
+    /* resten sørger for at teskten står i midten af skærmen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*Sætter teskten baggrundsfarve til gennemsigtig
+sådan man kan se igennem det, du må lige overveje
+om du synes man skal kunne se lidt af farven, hvis du
+vil skal du ændre på det sidste tal og sætte det i decimal procenter */
+.main h1, span {
+    background: rgba(256, 256, 256, 0);
+}
+
+/* Ændre fonttype, weight og størrelse */
+.main h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 3.5rem;
+}
+
+/* Ændre fonttype, weight og størrelse */
+.main span {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
 }
