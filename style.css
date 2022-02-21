@@ -2,7 +2,7 @@
 en gang og på den måde ændre den på hele siden */
 :root {
     --main-color: #ffffff;
-    --main-contrast: #4690E0;
+    --main-contrast: #FC9D46;
     --main-bg1: #5AFA8D;
     --main-bg2: #EBE672;
     --main-bg3: #F06C4F;
@@ -17,6 +17,7 @@ som skriver over den */
     margin: 0;
     padding: 0;
     background-color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Generel stiling for navbaren*/
@@ -38,6 +39,7 @@ li, a, button {
     position: fixed;
     width: 100%;
     margin-bottom: 50px;
+    z-index: 1;
 }
 
 /* Gør at de ikke er i punktform */
@@ -235,40 +237,258 @@ men en liste */
     transform-origin: left;
 }
 
+.main {
+    display: block;
+    overflow: hidden;
+}
+
+
 /* Her begynder stiling af kroppen, rimelig basalt
 sørger for den ikke klipper med navbar, sætter baggrunds-
 billede */
-.main {
-    padding: 50px;
-    background-image: url(landskab.jpeg);
+.front {
+    position: relative;
     width: 100%;
-    height: 800px;
-    background-repeat: no-repeat;
-    /* resten sørger for at teskten står i midten af skærmen */
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+}
+
+.front-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /*Sætter teskten baggrundsfarve til gennemsigtig
 sådan man kan se igennem det, du må lige overveje
 om du synes man skal kunne se lidt af farven, hvis du
 vil skal du ændre på det sidste tal og sætte det i decimal procenter */
-.main h1, span {
+.front h1 {
     background: rgba(256, 256, 256, 0);
-}
-
-/* Ændre fonttype, weight og størrelse */
-.main h1 {
+    position: absolute;
+    top: 35%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
     font-size: 3.5rem;
 }
 
 /* Ændre fonttype, weight og størrelse */
-.main span {
+.front span {
+    background: rgba(256, 256, 256, 0);
+}
+
+/* Ændre fonttype, weight og størrelse */
+.front span {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
+}
+
+.column {
+    width: 36%;
+    height: 100%;
+}
+
+.dif {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.column h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    background-color: rgba(256, 256, 256, 0);
+}
+
+.before {
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    transform: rotate(15deg);
+}
+
+.after {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    transform: rotate(-15deg);
+}
+
+.edit {
+    display: flex;
+    position: relative;
+    padding: 0;
+}
+
+.edit h2 {
+    position: absolute;
+    top: 200px;
+    right: 350px;
+    background-color: rgba(256, 256, 256, 0);
+    font-size: 4rem;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+.edit h3 {
+    position: absolute;
+    top: 350px;
+    right: 350px;
+    background-color: rgba(256, 256, 256, 0);
+}
+
+.edit h3 a {
+    background-color: rgba(256, 256, 256, 0);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: var(--main-contrast);
+    padding: 0;
+}
+
+.edit h3 a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-contrast);
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+
+    transform: scaleX(0.7);
+    transform-origin: center;
+    transition: transform 250ms ease-in;
+}
+
+.edit h3 a:hover::after {
+    transform: scaleX(0.98);
+    transform-origin: center;
+}
+
+.gallery {
+    height: 1000px;
+    display: flex;
+    position: relative;
+}
+
+.treehouse {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 15%;
+}
+
+.kayak {
+    position: absolute;
+    top: 35%;
+    left: 36.5%;
+    width: 25%;
+}
+
+.fire {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    width: 15%;
+}
+
+.bottle {
+    position: absolute;
+    top: 65%;
+    left: 16%;
+    width: 17%;
+}
+
+.house {
+    position: absolute;
+    top: 70%;
+    right: 17%;
+    width: 15%;
+}
+
+.road {
+    position: absolute;
+    top: 110%;
+    left: 25%;
+    width: 13%;
+}
+
+.color {
+    position: absolute;
+    top: 105%;
+    left: 40%;
+    width: 17%;
+}
+
+.glass {
+    position: absolute;
+    top: 115%;
+    right: 27%;
+    width: 13%;
+}
+
+.drone {
+    margin-top: 550px;
+    position: absolute;
+    width: 100%;
+}
+
+.drone img {
+    width: 100%;
+}
+
+.drone h2 {
+    position: absolute;
+    top: 43%;
+    left: 53%;
+    background-color: rgba(256, 256, 256, 0);
+    font-size: 4rem;
+    letter-spacing: 5px;
+    font-weight: 300;
+    color: var(--main-color);
+}
+
+.drone h3 {
+    position: absolute;
+    top: 50%;
+    left: 53.2%;
+    background-color: rgba(256, 256, 256, 0);
+}
+
+.drone h3 a {
+    background-color: rgba(256, 256, 256, 0);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: var(--main-contrast);
+    padding: 0;
+}
+
+.drone h3 a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-contrast);
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+
+    transform: scaleX(0.7);
+    transform-origin: center;
+    transition: transform 250ms ease-in;
+}
+
+.drone h3 a:hover::after {
+    transform: scaleX(0.98);
+    transform-origin: center;
 }
