@@ -376,69 +376,68 @@ vil skal du ændre på det sidste tal og sætte det i decimal procenter */
 }
 
 .gallery {
-    height: 1000px;
+    height: 150vh;
     display: flex;
     position: relative;
 }
 
 .treehouse {
     position: absolute;
-    top: 10%;
-    left: 20%;
+    top: 7%;
+    left: 15%;
     width: 15%;
 }
 
 .kayak {
     position: absolute;
-    top: 35%;
+    top: 20%;
     left: 36.5%;
     width: 25%;
 }
 
 .fire {
     position: absolute;
-    top: 20%;
+    top: 15%;
     right: 20%;
     width: 15%;
 }
 
 .bottle {
     position: absolute;
-    top: 65%;
-    left: 16%;
+    top: 45%;
+    left: 18%;
     width: 17%;
 }
 
 .house {
     position: absolute;
-    top: 70%;
+    top: 50%;
     right: 17%;
     width: 15%;
 }
 
 .road {
     position: absolute;
-    top: 110%;
+    top: 75%;
     left: 25%;
     width: 13%;
 }
 
 .color {
     position: absolute;
-    top: 105%;
+    top: 65%;
     left: 40%;
     width: 17%;
 }
 
 .glass {
     position: absolute;
-    top: 115%;
+    top: 78%;
     right: 27%;
     width: 13%;
 }
 
 .drone {
-    margin-top: 550px;
     position: absolute;
     width: 100%;
 }
