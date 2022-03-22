@@ -10,14 +10,23 @@
 </head>
 <body>
         <div class="header">
-            <a class="cta" href="#"><button>KONTAKT</button></a>
+            <a class="cta" href="kontakt.html"><button>KONTAKT</button></a>
             <nav>
                 <ul class="nav_links">
-                    <li><a class="link_nav" href="#">HJEM</a></li>
+                    <li><a class="link_nav" href="index.html">HJEM</a></li>
                     <li><a class="filler" href="#">/</a></li>
-                    <li><a class="link_nav" href="#">PORTFOLIO</a></li>
+                    <li class="dropdown"><a class="link_nav" href="portfolio.html">PORTFOLIO</a>
+                    <div class="dropdown-content">
+                            <a class="" href="#">LANDSKAB</a>
+                            <a class="" href="#">DRONE</a>
+                            <a class="" href="#">PORTRÆT</a>
+                            <a class="" href="#">EVENT</a>
+                            <a class="" href="#">PRODUKT</a>
+                            <a class="" href="#">VIDEO</a>
+                        </div>
+                    </li>
                     <li><a class="filler" href="#">/</a></li>
-                    <li><a class="link_nav" href="#">PRISER</a></li>
+                    <li><a class="link_nav" href="priser.html">PRISER</a></li>
                 </ul>
             </nav>
                <ul class="social">
@@ -29,17 +38,17 @@
         </div>
         <div class="main">
                 <div class="front">
-                        <img src="images/landskab.jpeg" alt="" class="front-img">
-                        <h1 class="front-text scroll1">TOBIAS HEJGAARD JENSEN<br><span>Indsæt tekst her</span></h1>
-                        var im
+                        <img src="Images/aarhus.jpg" alt="" class="front-img">
+                        <img src="images/Profil-billede.jpeg" alt="" class="profile-pic">
+                        <h1 class="front-text scroll1">TOBIAS HEJGAARD JENSEN<br><span>Uanset opgaven finder vi <br>vejen til dit bedste produkt</span></h1>
                 </div>
                 <div class="dif">
                     <div class="column">
-                        <img src="images/Before.PNG" alt="Before" class="dif-img">
+                        <img src="images/paris1.jpg" alt="Before" class="dif-img">
                         <h2 class="before">FØR</h2>
                     </div>
                     <div class="column">
-                        <img src="images/After.PNG" alt="" class="dif-img">
+                        <img src="images/paris2.jpg" alt="" class="dif-img">
                         <h2 class="after">EFTER</h2>
                     </div>
                 </div>
@@ -60,8 +69,10 @@
                 </div>
                 <div class="drone">
                     <img src="Images/Drone.PNG" alt="">
-                    <h2>DRONE SHOTS</h2>
-                    <h3><a href="#">INTET PROBLEM</a></h3>
+                    <div class="drone-info">
+                        <h2>DRONE</h2>
+                        <h3><a href="#">SE MERE</a></h3>
+                    </div>
                 </div>
         </div>
 </body>
